@@ -1,38 +1,55 @@
-// HealthProfessional.java
+// Part 1 – Base class
 public class HealthProfessional {
-    // 必需实例变量
+    // Part 1 - Required instance variables: ID and name
     private int id;
     private String name;
-    private String specialization; // 另一个相关的基本信息变量
+    // Part 1 - Another instance variable relevant to describe basic information
+    private String specialization;
 
-    // 默认构造函数
+    // Part 1 - Default constructor
     public HealthProfessional() {
         this.id = 0;
         this.name = "Unknown";
         this.specialization = "General";
     }
 
-    // 带参数的构造函数
+    // Part 1 - Second constructor that initialises all the instance variables
     public HealthProfessional(int id, String name, String specialization) {
         this.id = id;
         this.name = name;
         this.specialization = specialization;
     }
 
-    // 打印所有实例变量的方法
+    // Part 1 - Method that prints all instance variables
     public void printDetails() {
         System.out.println("ID: " + id);
         System.out.println("Name: " + name);
         System.out.println("Specialization: " + specialization);
     }
 
-    // Getter 和 Setter 方法
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    // Getter methods
+    public int getId() {
+        return id;
+    }
 
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+    public String getName() {
+        return name;
+    }
 
-    public String getSpecialization() { return specialization; }
-    public void setSpecialization(String specialization) { this.specialization = specialization; }
+    public String getSpecialization() {
+        return specialization;
+    }
+
+    // Setter methods
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSpecialization(String specialization) {
+        this.specialization = specialization;
+    }
 }

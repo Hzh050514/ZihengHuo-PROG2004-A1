@@ -1,11 +1,11 @@
-// Specialist.java
+// Part 2 – Child class (Specialist)
 public class Specialist extends HealthProfessional {
-    // 区分专家的额外变量
+    // Part 2 - Instance variables to differentiate from General Practitioner
     private String specialityField;
     private int yearsOfExperience;
     private boolean requiresReferral;
 
-    // 默认构造函数
+    // Part 2 - Default constructor
     public Specialist() {
         super();
         this.specialityField = "Unknown";
@@ -13,7 +13,7 @@ public class Specialist extends HealthProfessional {
         this.requiresReferral = true;
     }
 
-    // 带参数的构造函数
+    // Part 2 - Second constructor that initialises all instance variables
     public Specialist(int id, String name, String specialization,
                       String specialityField, int yearsOfExperience, boolean requiresReferral) {
         super(id, name, specialization);
@@ -22,7 +22,7 @@ public class Specialist extends HealthProfessional {
         this.requiresReferral = requiresReferral;
     }
 
-    // 打印详细信息的方法
+    // Part 2 - Method that prints health professional details including type
     public void printProfessionalDetails() {
         System.out.println("=== Specialist Details ===");
         System.out.println("Type: Specialist");
@@ -33,18 +33,27 @@ public class Specialist extends HealthProfessional {
         System.out.println("-----------------------------------");
     }
 
-    // Getter 和 Setter 方法
-    public String getSpecialityField() { return specialityField; }
+    // Getter and setter methods
+    public String getSpecialityField() {
+        return specialityField;
+    }
+
     public void setSpecialityField(String specialityField) {
         this.specialityField = specialityField;
     }
 
-    public int getYearsOfExperience() { return yearsOfExperience; }
+    public int getYearsOfExperience() {
+        return yearsOfExperience;
+    }
+
     public void setYearsOfExperience(int yearsOfExperience) {
         this.yearsOfExperience = yearsOfExperience;
     }
 
-    public boolean requiresReferral() { return requiresReferral; }
+    public boolean requiresReferral() {
+        return requiresReferral;
+    }
+
     public void setRequiresReferral(boolean requiresReferral) {
         this.requiresReferral = requiresReferral;
     }

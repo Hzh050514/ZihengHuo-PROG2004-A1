@@ -1,17 +1,17 @@
-// GeneralPractitioner.java
+// Part 2 – Child class (General Practitioner)
 public class GeneralPractitioner extends HealthProfessional {
-    // 区分全科医生和其他医疗专业人员的额外变量
+    // Part 2 - Another instance variable to differentiate between health professional types
     private boolean canPrescribeMedication;
     private int maxPatientsPerDay;
 
-    // 默认构造函数
+    // Part 2 - Default constructor
     public GeneralPractitioner() {
         super();
         this.canPrescribeMedication = true;
         this.maxPatientsPerDay = 20;
     }
 
-    // 带参数的构造函数
+    // Part 2 - Second constructor that initialises all instance variables
     public GeneralPractitioner(int id, String name, String specialization,
                                boolean canPrescribeMedication, int maxPatientsPerDay) {
         super(id, name, specialization);
@@ -19,7 +19,7 @@ public class GeneralPractitioner extends HealthProfessional {
         this.maxPatientsPerDay = maxPatientsPerDay;
     }
 
-    // 打印详细信息的方法
+    // Part 2 - Method that prints health professional details including type
     public void printProfessionalDetails() {
         System.out.println("=== General Practitioner Details ===");
         System.out.println("Type: General Practitioner");
@@ -29,13 +29,19 @@ public class GeneralPractitioner extends HealthProfessional {
         System.out.println("-----------------------------------");
     }
 
-    // Getter 和 Setter 方法
-    public boolean canPrescribeMedication() { return canPrescribeMedication; }
+    // Getter and setter methods
+    public boolean canPrescribeMedication() {
+        return canPrescribeMedication;
+    }
+
     public void setCanPrescribeMedication(boolean canPrescribeMedication) {
         this.canPrescribeMedication = canPrescribeMedication;
     }
 
-    public int getMaxPatientsPerDay() { return maxPatientsPerDay; }
+    public int getMaxPatientsPerDay() {
+        return maxPatientsPerDay;
+    }
+
     public void setMaxPatientsPerDay(int maxPatientsPerDay) {
         this.maxPatientsPerDay = maxPatientsPerDay;
     }

@@ -1,16 +1,14 @@
-// Appointment.java
+// Part 4 – Appointment class
 public class Appointment {
-    // 患者详情
+    // Part 4 - Instance variables for patient details
     private String patientName;
     private String mobilePhone;
-
-    // 预约时间
+    // Part 4 - Instance variable for preferred time slot
     private String timeSlot;
-
-    // 选择的医生（使用基类类型实现多态）
+    // Part 4 - The selected doctor (object of child class)
     private HealthProfessional selectedDoctor;
 
-    // 默认构造函数
+    // Part 4 - Default constructor
     public Appointment() {
         this.patientName = "Unknown";
         this.mobilePhone = "Unknown";
@@ -18,7 +16,7 @@ public class Appointment {
         this.selectedDoctor = null;
     }
 
-    // 带参数的构造函数
+    // Part 4 - Second constructor that initialises all instance variables
     public Appointment(String patientName, String mobilePhone, String timeSlot, HealthProfessional selectedDoctor) {
         this.patientName = patientName;
         this.mobilePhone = mobilePhone;
@@ -26,7 +24,7 @@ public class Appointment {
         this.selectedDoctor = selectedDoctor;
     }
 
-    // 打印所有实例变量的方法
+    // Part 4 - Method that prints all instance variables
     public void printAppointmentDetails() {
         System.out.println("=== Appointment Details ===");
         System.out.println("Patient Name: " + patientName);
@@ -37,17 +35,36 @@ public class Appointment {
         System.out.println("-----------------------------------");
     }
 
-    // Getter 和 Setter 方法
-    public String getPatientName() { return patientName; }
-    public void setPatientName(String patientName) { this.patientName = patientName; }
+    // Getter methods - 这些在cancelBooking方法中会被使用
+    public String getPatientName() {
+        return patientName;
+    }
 
-    public String getMobilePhone() { return mobilePhone; }
-    public void setMobilePhone(String mobilePhone) { this.mobilePhone = mobilePhone; }
+    public String getMobilePhone() {
+        return mobilePhone;
+    }
 
-    public String getTimeSlot() { return timeSlot; }
-    public void setTimeSlot(String timeSlot) { this.timeSlot = timeSlot; }
+    public String getTimeSlot() {
+        return timeSlot;
+    }
 
-    public HealthProfessional getSelectedDoctor() { return selectedDoctor; }
+    public HealthProfessional getSelectedDoctor() {
+        return selectedDoctor;
+    }
+
+    // Setter methods - 这些在未来的扩展中可能会用到
+    public void setPatientName(String patientName) {
+        this.patientName = patientName;
+    }
+
+    public void setMobilePhone(String mobilePhone) {
+        this.mobilePhone = mobilePhone;
+    }
+
+    public void setTimeSlot(String timeSlot) {
+        this.timeSlot = timeSlot;
+    }
+
     public void setSelectedDoctor(HealthProfessional selectedDoctor) {
         this.selectedDoctor = selectedDoctor;
     }

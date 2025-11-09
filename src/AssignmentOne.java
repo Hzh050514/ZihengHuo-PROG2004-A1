@@ -5,7 +5,6 @@ public class AssignmentOne {
 
     private static final ArrayList<Appointment> appointments = new ArrayList<>();
 
-    // 修复：移除 public 修饰符（Java 25 新特性）
     static void main(String[] args) {
 
         // Part 3 – Using classes and objects
@@ -52,7 +51,7 @@ public class AssignmentOne {
         System.out.println("---");
     }
 
-    // 创建新预约并添加到ArrayList的方法
+    // Part 5 - Create appointment method
     public static void createAppointment(String patientName, String mobilePhone,
                                          String timeSlot, HealthProfessional doctor) {
         // 验证必需信息
@@ -70,7 +69,7 @@ public class AssignmentOne {
         System.out.println("Appointment created successfully for " + patientName + " at " + timeSlot);
     }
 
-    // 显示ArrayList中现有预约的方法
+    // Part 5 - Print existing appointments method
     public static void printExistingAppointments() {
         if (appointments.isEmpty()) {
             System.out.println("No existing appointments.");
@@ -84,7 +83,7 @@ public class AssignmentOne {
         }
     }
 
-    // 使用患者手机号取消预约的方法
+    // Part 5 - Cancel booking method
     public static void cancelBooking(String mobilePhone) {
         if (mobilePhone == null || mobilePhone.trim().isEmpty()) {
             System.out.println("Error: Mobile phone number is required to cancel booking.");
