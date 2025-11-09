@@ -1,14 +1,25 @@
+/**
+ * Part 4 – Appointment class for managing patient bookings
+ * Represents an appointment between a patient and a health professional
+ * Demonstrates composition by containing a HealthProfessional object
+ */
 // Part 4 – Appointment class
 public class Appointment {
     // Part 4 - Instance variables for patient details
-    private String patientName;
-    private String mobilePhone;
+    private String patientName;    // Name of the patient
+    private String mobilePhone;    // Patient's contact number (used as identifier)
+
     // Part 4 - Instance variable for preferred time slot
-    private String timeSlot;
+    private String timeSlot;       // Appointment time in HH:MM format
+
     // Part 4 - The selected doctor (object of child class)
+    // Uses polymorphism - can store any HealthProfessional subclass object
     private HealthProfessional selectedDoctor;
 
-    // Part 4 - Default constructor
+    /**
+     * Part 4 - Default constructor
+     * Initializes all instance variables with default values
+     */
     public Appointment() {
         this.patientName = "Unknown";
         this.mobilePhone = "Unknown";
@@ -16,15 +27,28 @@ public class Appointment {
         this.selectedDoctor = null;
     }
 
-    // Part 4 - Second constructor that initialises all instance variables
-    public Appointment(String patientName, String mobilePhone, String timeSlot, HealthProfessional selectedDoctor) {
+    /**
+     * Part 4 - Parameterized constructor that initializes all instance variables
+     * Creates a fully configured appointment object
+     *
+     * @param patientName name of the patient
+     * @param mobilePhone patient's mobile number for identification
+     * @param timeSlot preferred appointment time
+     * @param selectedDoctor the health professional for the appointment
+     */
+    public Appointment(String patientName, String mobilePhone, String timeSlot,
+                       HealthProfessional selectedDoctor) {
         this.patientName = patientName;
         this.mobilePhone = mobilePhone;
         this.timeSlot = timeSlot;
         this.selectedDoctor = selectedDoctor;
     }
 
-    // Part 4 - Method that prints all instance variables
+    /**
+     * Part 4 - Method that prints all instance variables
+     * Displays complete appointment information in readable format
+     * Demonstrates accessing methods of the contained HealthProfessional object
+     */
     public void printAppointmentDetails() {
         System.out.println("=== Appointment Details ===");
         System.out.println("Patient Name: " + patientName);
@@ -35,7 +59,8 @@ public class Appointment {
         System.out.println("-----------------------------------");
     }
 
-    // Getter methods - 这些在cancelBooking方法中会被使用
+    // Getter methods provide access to private instance variables
+    // Essential for other classes to interact with Appointment objects
     public String getPatientName() {
         return patientName;
     }
@@ -52,7 +77,8 @@ public class Appointment {
         return selectedDoctor;
     }
 
-    // Setter methods - 这些在未来的扩展中可能会用到
+    // Setter methods allow modification of appointment details
+    // Important for maintaining data integrity and enabling updates
     public void setPatientName(String patientName) {
         this.patientName = patientName;
     }
